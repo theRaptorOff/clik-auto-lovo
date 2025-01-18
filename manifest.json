@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Button Clicker",
+  "version": "1.0",
+  "description": "Clicks button with selector .FQtDt > font > font on studio.lovo.ai",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://studio.lovo.ai/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://studio.lovo.ai/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
